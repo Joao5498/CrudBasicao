@@ -1,0 +1,15 @@
+# Java
+*.class
+
+# NetBeans
+/nbproject/private/
+/build/
+/dist/
+/nbbuild/
+/nbdist/
+
+# Maven, caso utilizemos futuramente
+/target/
+
+# Arquivos locais
+*.log
