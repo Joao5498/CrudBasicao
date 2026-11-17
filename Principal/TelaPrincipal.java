@@ -12,7 +12,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     
     public TelaPrincipal() {
         initComponents();
-        this.setContentPane(desktop);               
+        this.setContentPane(desktop);
     }
     
     private void createFrame(JInternalFrame frame){
@@ -35,8 +35,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jm_produtos = new javax.swing.JMenu();
         jmi_produtos = new javax.swing.JMenuItem();
         jmi_banco = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jmi_tabela = new javax.swing.JMenuItem();
+        jm_criadb = new javax.swing.JMenuItem();
+        jmi_criatabela = new javax.swing.JMenuItem();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -63,11 +63,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jmi_banco.setText("Banco");
 
-        jMenuItem1.setText("Criar DB");
-        jmi_banco.add(jMenuItem1);
+        jm_criadb.setText("Criar DB");
+        jm_criadb.addActionListener(this::jm_criadbActionPerformed);
+        jmi_banco.add(jm_criadb);
 
-        jmi_tabela.setText("Criar Tabela");
-        jmi_banco.add(jmi_tabela);
+        jmi_criatabela.setText("Criar Tabela");
+        jmi_criatabela.addActionListener(this::jmi_criatabelaActionPerformed);
+        jmi_banco.add(jmi_criatabela);
 
         jm_menu.add(jmi_banco);
 
@@ -90,6 +92,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jmi_produtosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_produtosActionPerformed
         createFrame(new TelaProdutos());
     }//GEN-LAST:event_jmi_produtosActionPerformed
+
+    private void jm_criadbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_criadbActionPerformed
+        GeraDB.criaBanco();
+        GeraDB.criaUsuario();
+    }//GEN-LAST:event_jm_criadbActionPerformed
+
+    private void jmi_criatabelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_criatabelaActionPerformed
+        BD.criaTabela();
+    }//GEN-LAST:event_jmi_criatabelaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,13 +128,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JMenuItem jm_criadb;
     private javax.swing.JMenuBar jm_menu;
     private javax.swing.JMenu jm_produtos;
     private javax.swing.JMenu jmi_banco;
+    private javax.swing.JMenuItem jmi_criatabela;
     private javax.swing.JMenuItem jmi_produtos;
-    private javax.swing.JMenuItem jmi_tabela;
     // End of variables declaration//GEN-END:variables
 }

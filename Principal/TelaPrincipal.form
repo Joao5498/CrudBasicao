@@ -45,15 +45,21 @@
             <Property name="text" type="java.lang.String" value="Banco"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+            <MenuItem class="javax.swing.JMenuItem" name="jm_criadb">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Criar DB"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jm_criadbActionPerformed"/>
+              </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jmi_tabela">
+            <MenuItem class="javax.swing.JMenuItem" name="jmi_criatabela">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Criar Tabela"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmi_criatabelaActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
